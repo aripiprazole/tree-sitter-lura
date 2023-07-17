@@ -12,17 +12,184 @@ module.exports = grammar({
     [$.app_expr, $._expr],
     [$.parameter, $._primary],
     [$.if_stmt, $.if_expr],
+    [$.binary_expr, $.parameter],
+    [$.tuple_expr, $.pi_parameter],
+    [$.type_app_expr, $.app_expr],
+    [$._expr, $.type_app_expr, $.app_expr],
   ],
 
   rules: {
     // TODO: add the actual grammar rules
-    source_file: $ => $.block,
+    source_file: $ => seq(
+      optional($.hash_bang),
+      optional(seq(
+        $._decl,
+        repeat(seq($._line_break, $._decl)),
+        optional($._line_break)
+      ))
+    ),
 
-    identifier: $ => /[a-zA-Z_'][a-zA-Z'\d_$]*/,
+    symbol_identifier: $ => seq('`', $.infix_op),
+
+    identifier: $ => choice($.simple_identifier, $.symbol_identifier),
 
     path: $ => seq(
       field('segments', $.identifier),
       repeat(seq('.', field('segments', $.identifier))),
+    ),
+    // Declarations
+
+    _decl: $ => choice(
+      $.command,
+      $.using,
+      $.class_decl,
+      $.trait_decl,
+      $.data_decl,
+      $.signature,
+      $.clause,
+    ),
+
+    _argument_list: $ => choice($.explicit_arguments, $.implicit_arguments),
+
+    attribute: $ => prec.left(seq(
+      '@',
+      field('name', $.path),
+      optional(seq(
+        '(',
+        $._expr,
+        repeat(seq(',', field('argument', $._expr))),
+        optional(','),
+        ')',
+      )),
+    )),
+
+    explicit_arguments: $ => seq('(', optional($._parameter_set), ')'),
+
+    implicit_arguments: $ => seq('[', optional($._parameter_set), ']'),
+
+    visibility: $ => choice('public', 'sealed', 'private', 'internal'),
+
+    using: $ => seq(
+      repeat(field('attributes', $.attribute)),
+      'using',
+      field('path', $.path),
+    ),
+
+    command: $ => seq(
+      repeat(field('attributes', $.attribute)),
+      '#',
+      field('command', $.path),
+      optional(seq(
+        $._expr,
+        repeat(seq(',', field('argument', $._expr))),
+        optional(','),
+      )),
+    ),
+
+    signature: $ => seq(
+      repeat(field('attributes', $.attribute)),
+      optional(field('visibility', $.visibility)),
+      field('name', $.path),
+      repeat($._argument_list),
+      optional(field('clause_type', $._clause_type)),
+      optional(field('value', $._signature_value)),
+    ),
+
+    clause: $ => seq(
+      repeat(field('attributes', $.attribute)),
+      field('name', $.path),
+      repeat(field('patterns', $._pattern)),
+      '=',
+      optional(field('value', $._expr)),
+    ),
+
+    data_decl: $ => seq(
+      repeat(field('attributes', $.attribute)),
+      optional(field('visibility', $.visibility)),
+      'data',
+      field('name', $.path),
+      repeat($._argument_list),
+      optional(field('clause_type', $._clause_type)),
+      optional($._data_body),
+    ),
+
+    trait_decl: $ => seq(
+      repeat(field('attributes', $.attribute)),
+      optional(field('visibility', $.visibility)),
+      'trait',
+      field('name', $.path),
+      repeat($._argument_list),
+      optional(field('clause_type', $._clause_type)),
+      optional($._class_body),
+    ),
+
+    class_decl: $ => seq(
+      repeat(field('attributes', $.attribute)),
+      optional(field('visibility', $.visibility)),
+      'class',
+      field('name', $.path),
+      repeat($._argument_list),
+      optional(field('clause_type', $._clause_type)),
+      optional($._data_body),
+    ),
+
+    _class_body: $ => seq(
+      '{',
+      optional(seq(
+        $._class_property,
+        repeat(seq($._line_break, $._class_property)),
+        optional($._line_break)
+      )),
+      '}'
+    ),
+
+    _signature_value: $ => prec(5, $.block),
+
+    _class_property: $ => choice($.signature),
+
+    _clause_type: $ => seq(':', field('clause_type', $._type_expr)),
+
+    _data_body: $ => seq(
+      '{',
+      optional($._data_constructors),
+      optional(seq(';', $._data_methods)),
+      '}'
+    ),
+
+    _data_constructor: $ => seq(
+      repeat(field('attributes', $.attribute)),
+      choice(
+        $.signature_constructor,
+        $.function_constructor,
+      ),
+    ),
+
+    _data_constructors: $ => seq(
+      $._class_property,
+      repeat(seq($._line_break, $._class_property)),
+      optional($._line_break)
+    ),
+
+    _data_methods: $ => seq(
+      $._class_property,
+      repeat(seq($._line_break, $._class_property)),
+      optional($._line_break)
+    ),
+
+    signature_constructor: $ => seq(
+      field('name', $.path),
+      ':',
+      field('field_type', $._type_expr),
+    ),
+
+    function_constructor: $ => seq(
+      field('name', $.path),
+      repeat(field('parameters', $.constructor_parameter)),
+    ),
+
+    constructor_parameter: $ => seq(
+      optional(seq(field('name', $.identifier), ':')),
+      field('parameter_type', $._expr),
     ),
 
     // Statements
@@ -77,14 +244,26 @@ module.exports = grammar({
 
     // Expressions
     _expr: $ => choice(
+      $._primary,
       $.match_expr,
       $.sigma_expr,
       $.app_expr,
-      $._primary,
+      $.lam_expr,
       $.ann_expr,
       $.pi_expr,
       $.binary_expr,
     ),
+
+    _type_expr: $ => prec(2, choice(
+      $._primary,
+      $.match_expr,
+      $.sigma_expr,
+      $.type_app_expr,
+      $.lam_expr,
+      $.ann_expr,
+      $.pi_expr,
+      $.binary_expr,
+    )),
 
     binary_expr: $ => prec.left(seq(
       field('lhs', $._expr),
@@ -92,22 +271,34 @@ module.exports = grammar({
       field('rhs', $._expr),
     )),
 
+    type_app_expr: $ => prec.left(seq(
+      field('callee', $._primary),
+      repeat(field('arguments', $._primary)),
+    )),
+
     app_expr: $ => prec.left(seq(
       field('callee', $._primary),
-      repeat1(field('arguments', $._primary)),
+      repeat(field('arguments', $._primary)),
+      optional($.block),
     )),
 
     tuple_expr: $ => seq(
       '(',
-      repeat(seq($._expr, ',')),
-      optional(','),
+      optional(seq(
+        $._expr,
+        repeat(seq(',', $._expr)),
+        optional(','),
+      )),
       ')',
     ),
 
     array_expr: $ => seq(
       '[',
-      repeat(seq($._expr, ',')),
-      optional(','),
+      optional(seq(
+        $._expr,
+        repeat(seq(',', $._expr)),
+        optional(','),
+      )),
       ']'
     ),
 
@@ -118,7 +309,7 @@ module.exports = grammar({
     )),
 
     parameter: $ => seq(
-      field('name', $.identifier),
+      field('pattern', $._pattern),
       optional(seq(
         ':',
         field('type', $._expr),
@@ -126,26 +317,34 @@ module.exports = grammar({
     ),
 
     _parameter_set: $ => seq(
-      repeat1(seq($.parameter, ',')),
+      $.parameter,
+      repeat(seq(',', $.parameter)),
       optional(','),
     ),
 
-    lam_expr: $ => prec.right(seq(
+    lam_expr: $ => prec.left(1, seq(
       '|',
       optional($._parameter_set),
       '|',
       field('value', $._expr),
     )),
 
-    pi_expr: $ => prec.right(seq(
-      '(',
-      optional($._parameter_set),
-      ')',
+    pi_parameter: $ => choice(
+      prec(1, $._primary),
+      prec(3, seq(
+        '(',
+        optional($._parameter_set),
+        ')',
+      )),
+    ),
+
+    pi_expr: $ => prec.right(2, seq(
+      $.pi_parameter,
       '->',
-      field('value', $._expr),
+      field('value', $._type_expr),
     )),
 
-    sigma_expr: $ => prec.right(seq(
+    sigma_expr: $ => prec.left(3, seq(
       '[',
       optional($._parameter_set),
       ']',
@@ -170,7 +369,7 @@ module.exports = grammar({
 
     return_expr: $ => prec.left(seq(
       'return',
-      field('value', $._expr),
+      optional(field('value', $._expr)),
     )),
 
     match_arm: $ => seq(
@@ -179,10 +378,10 @@ module.exports = grammar({
       field('body', $._arm_body),
     ),
 
-    _then_body: $ => choice(
+    _then_body: $ => prec.left(choice(
       $.block,
       seq('then', $._expr),
-    ),
+    )),
 
     _else_body: $ => prec.left(choice($.block, $._expr)),
 
@@ -252,7 +451,7 @@ module.exports = grammar({
     char: $ => /'[^'\\]'/,
     string: $ => /"([^"\\\n\r]|\\[^\n\r])*"/,
 
-    infix_op: $ => repeat1($._symbol),
+    infix_op: $ => prec.left(repeat1($._symbol)),
 
     attribute_id: $ => /[a-zA-Z][a-zA-Z\d_$]*/,
 
@@ -260,5 +459,7 @@ module.exports = grammar({
 
     doc_string: $ => prec(2, token(seq('//!', /.*/))),
     line_comment: $ => prec(1, token(seq('//', /.*/))),
+
+    simple_identifier: $ => /[a-zA-Z_'][a-zA-Z'\d_$]*/,
   }
 });
