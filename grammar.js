@@ -1,5 +1,5 @@
 module.exports = grammar({
-  name: 'asena',
+  name: 'lura',
 
   extras: $ => [
     $.doc_string,
