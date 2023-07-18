@@ -1405,20 +1405,27 @@
   {
     "type": "source_file",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "decl",
-          "named": true
-        },
-        {
-          "type": "hash_bang",
-          "named": true
-        }
-      ]
+    "fields": {
+      "decl": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "decl",
+            "named": true
+          }
+        ]
+      },
+      "hash_bang": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "hash_bang",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {

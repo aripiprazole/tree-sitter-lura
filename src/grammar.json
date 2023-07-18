@@ -8,8 +8,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "hash_bang"
+              "type": "FIELD",
+              "name": "hash_bang",
+              "content": {
+                "type": "SYMBOL",
+                "name": "hash_bang"
+              }
             },
             {
               "type": "BLANK"
@@ -23,8 +27,12 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "decl"
+                  "type": "FIELD",
+                  "name": "decl",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "decl"
+                  }
                 },
                 {
                   "type": "REPEAT",
@@ -36,8 +44,12 @@
                         "name": "_line_break"
                       },
                       {
-                        "type": "SYMBOL",
-                        "name": "decl"
+                        "type": "FIELD",
+                        "name": "decl",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "decl"
+                        }
                       }
                     ]
                   }

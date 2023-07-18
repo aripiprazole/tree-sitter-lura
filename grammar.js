@@ -18,10 +18,10 @@ module.exports = grammar({
   rules: {
     // TODO: add the actual grammar rules
     source_file: $ => seq(
-      optional($.hash_bang),
+      optional(field('hash_bang', $.hash_bang)),
       optional(seq(
-        $.decl,
-        repeat(seq($._line_break, $.decl)),
+        field('decl', $.decl),
+        repeat(seq($._line_break, field('decl', $.decl))),
         optional($._line_break)
       ))
     ),
