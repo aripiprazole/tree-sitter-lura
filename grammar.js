@@ -430,9 +430,9 @@ module.exports = grammar({
     u128: $ => prec(2, seq($._integer, optional('u128'))),
     nat: $ => prec(1, seq($._integer, optional('n'))),
 
-    octal: $ => seq(choice('0O', '0o'), $._octal),
-    hex: $ => seq(choice('0x', '0x'), $._hex),
-    binary: $ => seq(choice('0B', '0b'), $._binary),
+    octal: $ => seq(/Oo/i, $._octal),
+    hex: $ => seq(/Ox/i, $._hex),
+    binary: $ => seq(/Ob/i, $._binary),
 
     // LEXER
     _line_break: $ => /(\n|\r\n|;)+/,
