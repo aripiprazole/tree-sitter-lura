@@ -67,65 +67,65 @@ module.exports = grammar({
     visibility: $ => choice('public', 'sealed', 'private', 'internal'),
 
     using: $ => seq(
-      repeat(field('attributes', $.attribute)),
+      repeat(field('attribute', $.attribute)),
       'using',
       field('path', $.path),
     ),
 
     command: $ => seq(
-      repeat(field('attributes', $.attribute)),
+      repeat(field('attribute', $.attribute)),
       '#',
       field('command', $.path),
       optional(seq(
-        field('arguments', $.expr),
-        repeat(seq(',', field('arguments', $.expr))),
+        field('argument', $.expr),
+        repeat(seq(',', field('argument', $.expr))),
         optional(','),
       )),
     ),
 
     signature: $ => seq(
-      repeat(field('attributes', $.attribute)),
+      repeat(field('attribute', $.attribute)),
       optional(field('visibility', $.visibility)),
       field('name', $.path),
-      repeat(field('arguments', $._argument_list)),
+      repeat(field('argument', $._argument_list)),
       optional(field('clause_type', $._clause_type)),
       optional(field('value', $._signature_value)),
     ),
 
     clause: $ => seq(
-      repeat(field('attributes', $.attribute)),
+      repeat(field('attribute', $.attribute)),
       field('name', $.path),
-      repeat(field('patterns', $.pattern)),
+      repeat(field('pattern', $.pattern)),
       '=',
       optional(field('value', $.expr)),
     ),
 
     data_decl: $ => seq(
-      repeat(field('attributes', $.attribute)),
+      repeat(field('attribute', $.attribute)),
       optional(field('visibility', $.visibility)),
       'data',
       field('name', $.path),
-      repeat(field('arguments', $._argument_list)),
+      repeat(field('argument', $._argument_list)),
       optional(field('clause_type', $._clause_type)),
       optional($._data_body),
     ),
 
     trait_decl: $ => seq(
-      repeat(field('attributes', $.attribute)),
+      repeat(field('attribute', $.attribute)),
       optional(field('visibility', $.visibility)),
       'trait',
       field('name', $.path),
-      repeat(field('arguments', $._argument_list)),
+      repeat(field('argument', $._argument_list)),
       optional(field('clause_type', $._clause_type)),
       optional($._class_body),
     ),
 
     class_decl: $ => seq(
-      repeat(field('attributes', $.attribute)),
+      repeat(field('attribute', $.attribute)),
       optional(field('visibility', $.visibility)),
       'class',
       field('name', $.path),
-      repeat(field('arguments', $._argument_list)),
+      repeat(field('argument', $._argument_list)),
       optional(field('clause_type', $._clause_type)),
       optional($._data_body),
     ),
@@ -133,8 +133,8 @@ module.exports = grammar({
     _class_body: $ => seq(
       '{',
       optional(seq(
-        field('properties', $._class_property),
-        repeat(seq($._line_break, field('properties', $._class_property))),
+        field('field', $._class_property),
+        repeat(seq($._line_break, field('field', $._class_property))),
         optional($._line_break)
       )),
       '}'
@@ -154,7 +154,7 @@ module.exports = grammar({
     ),
 
     _data_constructor: $ => seq(
-      repeat(field('attributes', $.attribute)),
+      repeat(field('attribute', $.attribute)),
       choice(
         $.signature_constructor,
         $.function_constructor,
@@ -162,14 +162,14 @@ module.exports = grammar({
     ),
 
     _data_constructors: $ => seq(
-      field('constructors', $._data_constructor),
-      repeat(seq($._line_break, field('constructors', $._data_constructor))),
+      field('constructor', $._data_constructor),
+      repeat(seq($._line_break, field('constructor', $._data_constructor))),
       optional($._line_break)
     ),
 
     _data_methods: $ => seq(
-      field('properties', $._class_property),
-      repeat(seq($._line_break, field('properties', $._class_property))),
+      field('field', $._class_property),
+      repeat(seq($._line_break, field('field', $._class_property))),
       optional($._line_break)
     ),
 
@@ -181,7 +181,7 @@ module.exports = grammar({
 
     function_constructor: $ => seq(
       field('name', $.path),
-      repeat(field('parameters', $.constructor_parameter)),
+      repeat(field('parameter', $.constructor_parameter)),
     ),
 
     constructor_parameter: $ => prec.left(seq(
@@ -222,8 +222,8 @@ module.exports = grammar({
     block: $ => seq(
       '{',
       optional(seq(
-        field('statements', $.stmt),
-        repeat(seq($._line_break, field('statements', $.stmt))),
+        field('statement', $.stmt),
+        repeat(seq($._line_break, field('statement', $.stmt))),
         optional($._line_break)
       )),
       '}',
@@ -236,7 +236,7 @@ module.exports = grammar({
 
     cons_pattern: $ => prec.left(seq(
       field('name', $.path),
-      repeat(field('patterns', $.pattern)),
+      repeat(field('pattern', $.pattern)),
     )),
 
     // Expressions
@@ -270,12 +270,12 @@ module.exports = grammar({
 
     type_app_expr: $ => prec.left(seq(
       field('callee', $.primary),
-      repeat(field('arguments', $.primary)),
+      repeat(field('argument', $.primary)),
     )),
 
     app_expr: $ => prec.left(seq(
       field('callee', $.primary),
-      repeat(field('arguments', $.primary)),
+      repeat(field('argument', $.primary)),
       optional($.block),
     )),
 
@@ -292,8 +292,8 @@ module.exports = grammar({
     array_expr: $ => seq(
       '[',
       optional(seq(
-        $.expr,
-        repeat(seq(',', $.expr)),
+        field('item', $.expr),
+        repeat(seq(',', field('item', $.expr))),
         optional(','),
       )),
       ']'
@@ -336,7 +336,7 @@ module.exports = grammar({
     ),
 
     pi_expr: $ => prec.right(2, seq(
-      $.pi_parameter,
+      field('parameter', $.pi_parameter),
       '->',
       field('value', $.type_expr),
     )),
@@ -360,7 +360,7 @@ module.exports = grammar({
       'match',
       field('scrutinee', $.expr),
       '{',
-      repeat($.match_arm),
+      repeat(field('arm', $.match_arm)),
       '}',
     ),
 
