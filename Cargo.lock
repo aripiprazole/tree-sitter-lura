@@ -63,8 +63,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "tree-sitter-asena"
-version = "0.0.1"
+name = "tree-sitter-lura"
+version = "0.0.3"
 dependencies = [
  "cc",
  "tree-sitter",

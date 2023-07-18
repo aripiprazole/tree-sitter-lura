@@ -8,14 +8,11 @@ module.exports = grammar({
   ],
 
   conflicts: $ => [
-    [$.path, $._primary],
-    [$.app_expr, $._expr],
-    [$.parameter, $._primary],
+    [$.path, $.primary],
+    [$.app_expr, $.expr],
     [$.if_stmt, $.if_expr],
-    [$.binary_expr, $.parameter],
-    [$.tuple_expr, $.pi_parameter],
     [$.type_app_expr, $.app_expr],
-    [$._expr, $.type_app_expr, $.app_expr],
+    [$.expr, $.type_app_expr, $.app_expr],
   ],
 
   rules: {
@@ -23,8 +20,8 @@ module.exports = grammar({
     source_file: $ => seq(
       optional($.hash_bang),
       optional(seq(
-        $._decl,
-        repeat(seq($._line_break, $._decl)),
+        $.decl,
+        repeat(seq($._line_break, $.decl)),
         optional($._line_break)
       ))
     ),
@@ -39,7 +36,7 @@ module.exports = grammar({
     ),
     // Declarations
 
-    _decl: $ => choice(
+    decl: $ => choice(
       $.command,
       $.using,
       $.class_decl,
@@ -56,8 +53,8 @@ module.exports = grammar({
       field('name', $.path),
       optional(seq(
         '(',
-        $._expr,
-        repeat(seq(',', field('argument', $._expr))),
+        $.expr,
+        repeat(seq(',', field('argument', $.expr))),
         optional(','),
         ')',
       )),
@@ -80,8 +77,8 @@ module.exports = grammar({
       '#',
       field('command', $.path),
       optional(seq(
-        $._expr,
-        repeat(seq(',', field('argument', $._expr))),
+        field('arguments', $.expr),
+        repeat(seq(',', field('arguments', $.expr))),
         optional(','),
       )),
     ),
@@ -90,7 +87,7 @@ module.exports = grammar({
       repeat(field('attributes', $.attribute)),
       optional(field('visibility', $.visibility)),
       field('name', $.path),
-      repeat($._argument_list),
+      repeat(field('arguments', $._argument_list)),
       optional(field('clause_type', $._clause_type)),
       optional(field('value', $._signature_value)),
     ),
@@ -98,9 +95,9 @@ module.exports = grammar({
     clause: $ => seq(
       repeat(field('attributes', $.attribute)),
       field('name', $.path),
-      repeat(field('patterns', $._pattern)),
+      repeat(field('patterns', $.pattern)),
       '=',
-      optional(field('value', $._expr)),
+      optional(field('value', $.expr)),
     ),
 
     data_decl: $ => seq(
@@ -108,7 +105,7 @@ module.exports = grammar({
       optional(field('visibility', $.visibility)),
       'data',
       field('name', $.path),
-      repeat($._argument_list),
+      repeat(field('arguments', $._argument_list)),
       optional(field('clause_type', $._clause_type)),
       optional($._data_body),
     ),
@@ -118,7 +115,7 @@ module.exports = grammar({
       optional(field('visibility', $.visibility)),
       'trait',
       field('name', $.path),
-      repeat($._argument_list),
+      repeat(field('arguments', $._argument_list)),
       optional(field('clause_type', $._clause_type)),
       optional($._class_body),
     ),
@@ -128,7 +125,7 @@ module.exports = grammar({
       optional(field('visibility', $.visibility)),
       'class',
       field('name', $.path),
-      repeat($._argument_list),
+      repeat(field('arguments', $._argument_list)),
       optional(field('clause_type', $._clause_type)),
       optional($._data_body),
     ),
@@ -136,8 +133,8 @@ module.exports = grammar({
     _class_body: $ => seq(
       '{',
       optional(seq(
-        $._class_property,
-        repeat(seq($._line_break, $._class_property)),
+        field('properties', $._class_property),
+        repeat(seq($._line_break, field('properties', $._class_property))),
         optional($._line_break)
       )),
       '}'
@@ -147,7 +144,7 @@ module.exports = grammar({
 
     _class_property: $ => choice($.signature),
 
-    _clause_type: $ => seq(':', field('clause_type', $._type_expr)),
+    _clause_type: $ => seq(':', field('clause_type', $.type_expr)),
 
     _data_body: $ => seq(
       '{',
@@ -165,21 +162,21 @@ module.exports = grammar({
     ),
 
     _data_constructors: $ => seq(
-      $._class_property,
-      repeat(seq($._line_break, $._class_property)),
+      field('constructors', $._data_constructor),
+      repeat(seq($._line_break, field('constructors', $._data_constructor))),
       optional($._line_break)
     ),
 
     _data_methods: $ => seq(
-      $._class_property,
-      repeat(seq($._line_break, $._class_property)),
+      field('properties', $._class_property),
+      repeat(seq($._line_break, field('properties', $._class_property))),
       optional($._line_break)
     ),
 
     signature_constructor: $ => seq(
       field('name', $.path),
       ':',
-      field('field_type', $._type_expr),
+      field('field_type', $.type_expr),
     ),
 
     function_constructor: $ => seq(
@@ -187,13 +184,13 @@ module.exports = grammar({
       repeat(field('parameters', $.constructor_parameter)),
     ),
 
-    constructor_parameter: $ => seq(
-      optional(seq(field('name', $.identifier), ':')),
-      field('parameter_type', $._expr),
-    ),
+    constructor_parameter: $ => prec.left(seq(
+      prec(3, optional(seq(field('name', $.identifier), ':'))),
+      field('parameter_type', $.expr),
+    )),
 
     // Statements
-    _stmt: $ => choice(
+    stmt: $ => choice(
       $.let_stmt,
       $.if_stmt,
       $.ask_stmt,
@@ -202,49 +199,49 @@ module.exports = grammar({
 
     if_stmt: $ => seq(
       'if',
-      field('condition', $._expr),
+      field('condition', $.expr),
       field('then', $._then_body),
       optional(field('otherwise', $._else_body)),
     ),
 
     ask_stmt: $ => seq(
-      field('pattern', $._pattern),
+      field('pattern', $.pattern),
       '<-',
-      field('value', $._expr),
+      field('value', $.expr),
     ),
 
     let_stmt: $ => seq(
       'let',
-      field('pattern', $._pattern),
+      field('pattern', $.pattern),
       '=',
-      field('value', $._expr),
+      field('value', $.expr),
     ),
 
-    expr_stmt: $ => $._expr,
+    expr_stmt: $ => $.expr,
 
     block: $ => seq(
       '{',
       optional(seq(
-        $._stmt,
-        repeat(seq($._line_break, $._stmt)),
+        field('statements', $.stmt),
+        repeat(seq($._line_break, field('statements', $.stmt))),
         optional($._line_break)
       )),
       '}',
     ),
 
     // Patterns
-    _pattern: $ => choice($.cons_pattern, $.rest_pattern, $._literal),
+    pattern: $ => choice($.cons_pattern, $.rest_pattern, $.literal),
 
     rest_pattern: $ => '..',
 
     cons_pattern: $ => prec.left(seq(
       field('name', $.path),
-      repeat(field('patterns', $._pattern)),
+      repeat(field('patterns', $.pattern)),
     )),
 
     // Expressions
-    _expr: $ => choice(
-      $._primary,
+    expr: $ => choice(
+      $.primary,
       $.match_expr,
       $.sigma_expr,
       $.app_expr,
@@ -254,8 +251,8 @@ module.exports = grammar({
       $.binary_expr,
     ),
 
-    _type_expr: $ => prec(2, choice(
-      $._primary,
+    type_expr: $ => prec(2, choice(
+      $.primary,
       $.match_expr,
       $.sigma_expr,
       $.type_app_expr,
@@ -266,27 +263,27 @@ module.exports = grammar({
     )),
 
     binary_expr: $ => prec.left(seq(
-      field('lhs', $._expr),
-      $.infix_op,
-      field('rhs', $._expr),
+      field('lhs', $.expr),
+      field('op', $.infix_op),
+      field('rhs', $.expr),
     )),
 
     type_app_expr: $ => prec.left(seq(
-      field('callee', $._primary),
-      repeat(field('arguments', $._primary)),
+      field('callee', $.primary),
+      repeat(field('arguments', $.primary)),
     )),
 
     app_expr: $ => prec.left(seq(
-      field('callee', $._primary),
-      repeat(field('arguments', $._primary)),
+      field('callee', $.primary),
+      repeat(field('arguments', $.primary)),
       optional($.block),
     )),
 
     tuple_expr: $ => seq(
       '(',
       optional(seq(
-        $._expr,
-        repeat(seq(',', $._expr)),
+        $.expr,
+        repeat(seq(',', $.expr)),
         optional(','),
       )),
       ')',
@@ -295,26 +292,26 @@ module.exports = grammar({
     array_expr: $ => seq(
       '[',
       optional(seq(
-        $._expr,
-        repeat(seq(',', $._expr)),
+        $.expr,
+        repeat(seq(',', $.expr)),
         optional(','),
       )),
       ']'
     ),
 
     ann_expr: $ => prec.left(seq(
-      field('value', $._expr),
+      field('value', $.expr),
       ':',
-      field('type', $._expr),
+      field('against', $.expr),
     )),
 
-    parameter: $ => seq(
-      field('pattern', $._pattern),
+    parameter: $ => prec.left(seq(
+      field('pattern', $.pattern),
       optional(seq(
         ':',
-        field('type', $._expr),
+        field('parameter_type', $.expr),
       )),
-    ),
+    )),
 
     _parameter_set: $ => seq(
       $.parameter,
@@ -326,11 +323,11 @@ module.exports = grammar({
       '|',
       optional($._parameter_set),
       '|',
-      field('value', $._expr),
+      field('value', $.expr),
     )),
 
     pi_parameter: $ => choice(
-      prec(1, $._primary),
+      prec(1, $.primary),
       prec(3, seq(
         '(',
         optional($._parameter_set),
@@ -341,7 +338,7 @@ module.exports = grammar({
     pi_expr: $ => prec.right(2, seq(
       $.pi_parameter,
       '->',
-      field('value', $._type_expr),
+      field('value', $.type_expr),
     )),
 
     sigma_expr: $ => prec.left(3, seq(
@@ -349,19 +346,19 @@ module.exports = grammar({
       optional($._parameter_set),
       ']',
       '->',
-      field('value', $._expr),
+      field('value', $.type_expr),
     )),
 
     if_expr: $ => seq(
       'if',
-      field('condition', $._expr),
+      field('condition', $.expr),
       field('then', $._then_body),
       field('otherwise', $._else_body),
     ),
 
     match_expr: $ => seq(
       'match',
-      field('scrutinee', $._expr),
+      field('scrutinee', $.expr),
       '{',
       repeat($.match_arm),
       '}',
@@ -369,27 +366,27 @@ module.exports = grammar({
 
     return_expr: $ => prec.left(seq(
       'return',
-      optional(field('value', $._expr)),
+      optional(field('value', $.expr)),
     )),
 
     match_arm: $ => seq(
-      field('pattern', $._pattern),
+      field('pattern', $.pattern),
       '=>',
       field('body', $._arm_body),
     ),
 
     _then_body: $ => prec.left(choice(
       $.block,
-      seq('then', $._expr),
+      seq('then', $.expr),
     )),
 
-    _else_body: $ => prec.left(choice($.block, $._expr)),
+    _else_body: $ => prec.left(choice($.block, $.expr)),
 
-    _arm_body: $ => choice($.block, $._expr),
+    _arm_body: $ => choice($.block, $.expr),
 
     // Primaries
-    _primary: $ => prec(1, choice(
-      $._literal,
+    primary: $ => prec(1, choice(
+      $.literal,
       $.identifier,
       $.tuple_expr,
       $.array_expr,
@@ -398,7 +395,7 @@ module.exports = grammar({
       $.return_expr,
     )),
 
-    _literal: $ => choice(
+    literal: $ => choice(
       $.string,
       $.char,
       $.f32,

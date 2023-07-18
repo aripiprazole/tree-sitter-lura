@@ -3,116 +3,12 @@
     "type": "ann_expr",
     "named": true,
     "fields": {
-      "type": {
+      "against": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -122,111 +18,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -242,87 +34,7 @@
         "required": false,
         "types": [
           {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "primary",
             "named": true
           }
         ]
@@ -332,87 +44,7 @@
         "required": true,
         "types": [
           {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "primary",
             "named": true
           }
         ]
@@ -438,111 +70,7 @@
       "required": false,
       "types": [
         {
-          "type": "ann_expr",
-          "named": true
-        },
-        {
-          "type": "app_expr",
-          "named": true
-        },
-        {
-          "type": "array_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "char",
-          "named": true
-        },
-        {
-          "type": "f32",
-          "named": true
-        },
-        {
-          "type": "f64",
-          "named": true
-        },
-        {
-          "type": "i128",
-          "named": true
-        },
-        {
-          "type": "i16",
-          "named": true
-        },
-        {
-          "type": "i64",
-          "named": true
-        },
-        {
-          "type": "i8",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "lam_expr",
-          "named": true
-        },
-        {
-          "type": "match_expr",
-          "named": true
-        },
-        {
-          "type": "nat",
-          "named": true
-        },
-        {
-          "type": "pi_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "sigma_expr",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tuple_expr",
-          "named": true
-        },
-        {
-          "type": "u1",
-          "named": true
-        },
-        {
-          "type": "u128",
-          "named": true
-        },
-        {
-          "type": "u16",
-          "named": true
-        },
-        {
-          "type": "u32",
-          "named": true
-        },
-        {
-          "type": "u64",
-          "named": true
-        },
-        {
-          "type": "u8",
+          "type": "expr",
           "named": true
         }
       ]
@@ -557,71 +85,7 @@
         "required": true,
         "types": [
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "cons_pattern",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "rest_pattern",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "pattern",
             "named": true
           }
         ]
@@ -631,111 +95,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -751,111 +111,7 @@
         "required": false,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -876,111 +132,7 @@
       "required": false,
       "types": [
         {
-          "type": "ann_expr",
-          "named": true
-        },
-        {
-          "type": "app_expr",
-          "named": true
-        },
-        {
-          "type": "array_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "char",
-          "named": true
-        },
-        {
-          "type": "f32",
-          "named": true
-        },
-        {
-          "type": "f64",
-          "named": true
-        },
-        {
-          "type": "i128",
-          "named": true
-        },
-        {
-          "type": "i16",
-          "named": true
-        },
-        {
-          "type": "i64",
-          "named": true
-        },
-        {
-          "type": "i8",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "lam_expr",
-          "named": true
-        },
-        {
-          "type": "match_expr",
-          "named": true
-        },
-        {
-          "type": "nat",
-          "named": true
-        },
-        {
-          "type": "pi_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "sigma_expr",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tuple_expr",
-          "named": true
-        },
-        {
-          "type": "u1",
-          "named": true
-        },
-        {
-          "type": "u128",
-          "named": true
-        },
-        {
-          "type": "u16",
-          "named": true
-        },
-        {
-          "type": "u32",
-          "named": true
-        },
-        {
-          "type": "u64",
-          "named": true
-        },
-        {
-          "type": "u8",
+          "type": "expr",
           "named": true
         }
       ]
@@ -1000,111 +152,17 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
+            "type": "expr",
             "named": true
-          },
+          }
+        ]
+      },
+      "op": {
+        "multiple": false,
+        "required": true,
+        "types": [
           {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "infix_op",
             "named": true
           }
         ]
@@ -1114,158 +172,47 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "infix_op",
-          "named": true
-        }
-      ]
     }
   },
   {
     "type": "block",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "ask_stmt",
-          "named": true
-        },
-        {
-          "type": "expr_stmt",
-          "named": true
-        },
-        {
-          "type": "if_stmt",
-          "named": true
-        },
-        {
-          "type": "let_stmt",
-          "named": true
-        }
-      ]
+    "fields": {
+      "statements": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "stmt",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
     "type": "class_decl",
     "named": true,
     "fields": {
+      "arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "explicit_arguments",
+            "named": true
+          },
+          {
+            "type": "implicit_arguments",
+            "named": true
+          }
+        ]
+      },
       "attributes": {
         "multiple": true,
         "required": false,
@@ -1285,111 +232,25 @@
             "named": false
           },
           {
-            "type": "ann_expr",
+            "type": "type_expr",
+            "named": true
+          }
+        ]
+      },
+      "constructors": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
             "named": true
           },
           {
-            "type": "array_expr",
+            "type": "function_constructor",
             "named": true
           },
           {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "type_app_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "signature_constructor",
             "named": true
           }
         ]
@@ -1404,6 +265,16 @@
           }
         ]
       },
+      "properties": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "signature",
+            "named": true
+          }
+        ]
+      },
       "visibility": {
         "multiple": false,
         "required": false,
@@ -1414,24 +285,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "explicit_arguments",
-          "named": true
-        },
-        {
-          "type": "implicit_arguments",
-          "named": true
-        },
-        {
-          "type": "signature",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1463,71 +316,7 @@
         "required": false,
         "types": [
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "cons_pattern",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "rest_pattern",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "pattern",
             "named": true
           }
         ]
@@ -1537,111 +326,7 @@
         "required": false,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -1652,116 +337,12 @@
     "type": "command",
     "named": true,
     "fields": {
-      "argument": {
+      "arguments": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -1786,120 +367,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "ann_expr",
-          "named": true
-        },
-        {
-          "type": "app_expr",
-          "named": true
-        },
-        {
-          "type": "array_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "char",
-          "named": true
-        },
-        {
-          "type": "f32",
-          "named": true
-        },
-        {
-          "type": "f64",
-          "named": true
-        },
-        {
-          "type": "i128",
-          "named": true
-        },
-        {
-          "type": "i16",
-          "named": true
-        },
-        {
-          "type": "i64",
-          "named": true
-        },
-        {
-          "type": "i8",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "lam_expr",
-          "named": true
-        },
-        {
-          "type": "match_expr",
-          "named": true
-        },
-        {
-          "type": "nat",
-          "named": true
-        },
-        {
-          "type": "pi_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "sigma_expr",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tuple_expr",
-          "named": true
-        },
-        {
-          "type": "u1",
-          "named": true
-        },
-        {
-          "type": "u128",
-          "named": true
-        },
-        {
-          "type": "u16",
-          "named": true
-        },
-        {
-          "type": "u32",
-          "named": true
-        },
-        {
-          "type": "u64",
-          "named": true
-        },
-        {
-          "type": "u8",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1921,71 +388,7 @@
         "required": false,
         "types": [
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "cons_pattern",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "rest_pattern",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "pattern",
             "named": true
           }
         ]
@@ -2011,111 +414,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -2126,6 +425,20 @@
     "type": "data_decl",
     "named": true,
     "fields": {
+      "arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "explicit_arguments",
+            "named": true
+          },
+          {
+            "type": "implicit_arguments",
+            "named": true
+          }
+        ]
+      },
       "attributes": {
         "multiple": true,
         "required": false,
@@ -2145,111 +458,25 @@
             "named": false
           },
           {
-            "type": "ann_expr",
+            "type": "type_expr",
+            "named": true
+          }
+        ]
+      },
+      "constructors": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
             "named": true
           },
           {
-            "type": "array_expr",
+            "type": "function_constructor",
             "named": true
           },
           {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "type_app_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "signature_constructor",
             "named": true
           }
         ]
@@ -2264,6 +491,16 @@
           }
         ]
       },
+      "properties": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "signature",
+            "named": true
+          }
+        ]
+      },
       "visibility": {
         "multiple": false,
         "required": false,
@@ -2274,21 +511,42 @@
           }
         ]
       }
-    },
+    }
+  },
+  {
+    "type": "decl",
+    "named": true,
+    "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
         {
-          "type": "explicit_arguments",
+          "type": "class_decl",
           "named": true
         },
         {
-          "type": "implicit_arguments",
+          "type": "clause",
+          "named": true
+        },
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "data_decl",
           "named": true
         },
         {
           "type": "signature",
+          "named": true
+        },
+        {
+          "type": "trait_decl",
+          "named": true
+        },
+        {
+          "type": "using",
           "named": true
         }
       ]
@@ -2315,7 +573,7 @@
     }
   },
   {
-    "type": "expr_stmt",
+    "type": "expr",
     "named": true,
     "fields": {},
     "children": {
@@ -2331,47 +589,7 @@
           "named": true
         },
         {
-          "type": "array_expr",
-          "named": true
-        },
-        {
           "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "char",
-          "named": true
-        },
-        {
-          "type": "f32",
-          "named": true
-        },
-        {
-          "type": "f64",
-          "named": true
-        },
-        {
-          "type": "i128",
-          "named": true
-        },
-        {
-          "type": "i16",
-          "named": true
-        },
-        {
-          "type": "i64",
-          "named": true
-        },
-        {
-          "type": "i8",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_expr",
           "named": true
         },
         {
@@ -2383,51 +601,30 @@
           "named": true
         },
         {
-          "type": "nat",
-          "named": true
-        },
-        {
           "type": "pi_expr",
           "named": true
         },
         {
-          "type": "return_expr",
+          "type": "primary",
           "named": true
         },
         {
           "type": "sigma_expr",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
         {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tuple_expr",
-          "named": true
-        },
-        {
-          "type": "u1",
-          "named": true
-        },
-        {
-          "type": "u128",
-          "named": true
-        },
-        {
-          "type": "u16",
-          "named": true
-        },
-        {
-          "type": "u32",
-          "named": true
-        },
-        {
-          "type": "u64",
-          "named": true
-        },
-        {
-          "type": "u8",
+          "type": "expr",
           "named": true
         }
       ]
@@ -2594,111 +791,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -2708,115 +801,11 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
             "type": "block",
             "named": true
           },
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -2826,120 +815,16 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
             "type": "block",
             "named": true
           },
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
+            "type": "expr",
             "named": true
           },
           {
             "type": "then",
             "named": false
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
-            "named": true
           }
         ]
       }
@@ -2954,111 +839,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -3068,115 +849,11 @@
         "required": false,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
             "type": "block",
             "named": true
           },
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -3186,120 +863,16 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
             "type": "block",
             "named": true
           },
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
+            "type": "expr",
             "named": true
           },
           {
             "type": "then",
             "named": false
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
-            "named": true
           }
         ]
       }
@@ -3334,111 +907,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -3464,71 +933,7 @@
         "required": true,
         "types": [
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "cons_pattern",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "rest_pattern",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "pattern",
             "named": true
           }
         ]
@@ -3538,111 +943,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -3655,6 +956,77 @@
     "fields": {}
   },
   {
+    "type": "literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "char",
+          "named": true
+        },
+        {
+          "type": "f32",
+          "named": true
+        },
+        {
+          "type": "f64",
+          "named": true
+        },
+        {
+          "type": "i128",
+          "named": true
+        },
+        {
+          "type": "i16",
+          "named": true
+        },
+        {
+          "type": "i64",
+          "named": true
+        },
+        {
+          "type": "i8",
+          "named": true
+        },
+        {
+          "type": "nat",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "u1",
+          "named": true
+        },
+        {
+          "type": "u128",
+          "named": true
+        },
+        {
+          "type": "u16",
+          "named": true
+        },
+        {
+          "type": "u32",
+          "named": true
+        },
+        {
+          "type": "u64",
+          "named": true
+        },
+        {
+          "type": "u8",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "match_arm",
     "named": true,
     "fields": {
@@ -3663,115 +1035,11 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
             "type": "block",
             "named": true
           },
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -3781,71 +1049,7 @@
         "required": true,
         "types": [
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "cons_pattern",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "rest_pattern",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "pattern",
             "named": true
           }
         ]
@@ -3861,111 +1065,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -4014,190 +1114,22 @@
     "type": "parameter",
     "named": true,
     "fields": {
+      "parameter_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expr",
+            "named": true
+          }
+        ]
+      },
       "pattern": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "cons_pattern",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "rest_pattern",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "pattern",
             "named": true
           }
         ]
@@ -4221,6 +1153,29 @@
     }
   },
   {
+    "type": "pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "cons_pattern",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "rest_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "pi_expr",
     "named": true,
     "fields": {
@@ -4229,111 +1184,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "type_app_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "type_expr",
             "named": true
           }
         ]
@@ -4359,35 +1210,26 @@
       "required": false,
       "types": [
         {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "primary",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "primary",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
           "type": "array_expr",
-          "named": true
-        },
-        {
-          "type": "char",
-          "named": true
-        },
-        {
-          "type": "f32",
-          "named": true
-        },
-        {
-          "type": "f64",
-          "named": true
-        },
-        {
-          "type": "i128",
-          "named": true
-        },
-        {
-          "type": "i16",
-          "named": true
-        },
-        {
-          "type": "i64",
-          "named": true
-        },
-        {
-          "type": "i8",
           "named": true
         },
         {
@@ -4399,15 +1241,11 @@
           "named": true
         },
         {
+          "type": "literal",
+          "named": true
+        },
+        {
           "type": "match_expr",
-          "named": true
-        },
-        {
-          "type": "nat",
-          "named": true
-        },
-        {
-          "type": "parameter",
           "named": true
         },
         {
@@ -4415,35 +1253,7 @@
           "named": true
         },
         {
-          "type": "string",
-          "named": true
-        },
-        {
           "type": "tuple_expr",
-          "named": true
-        },
-        {
-          "type": "u1",
-          "named": true
-        },
-        {
-          "type": "u128",
-          "named": true
-        },
-        {
-          "type": "u16",
-          "named": true
-        },
-        {
-          "type": "u32",
-          "named": true
-        },
-        {
-          "type": "u64",
-          "named": true
-        },
-        {
-          "type": "u8",
           "named": true
         }
       ]
@@ -4458,111 +1268,7 @@
         "required": false,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "expr",
             "named": true
           }
         ]
@@ -4578,111 +1284,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "app_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "type_expr",
             "named": true
           }
         ]
@@ -4703,6 +1305,20 @@
     "type": "signature",
     "named": true,
     "fields": {
+      "arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "explicit_arguments",
+            "named": true
+          },
+          {
+            "type": "implicit_arguments",
+            "named": true
+          }
+        ]
+      },
       "attributes": {
         "multiple": true,
         "required": false,
@@ -4722,111 +1338,7 @@
             "named": false
           },
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "type_app_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "type_expr",
             "named": true
           }
         ]
@@ -4861,20 +1373,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "explicit_arguments",
-          "named": true
-        },
-        {
-          "type": "implicit_arguments",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -4886,111 +1384,7 @@
         "required": true,
         "types": [
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "type_app_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "type_expr",
             "named": true
           }
         ]
@@ -5016,35 +1410,38 @@
       "required": false,
       "types": [
         {
-          "type": "class_decl",
-          "named": true
-        },
-        {
-          "type": "clause",
-          "named": true
-        },
-        {
-          "type": "command",
-          "named": true
-        },
-        {
-          "type": "data_decl",
+          "type": "decl",
           "named": true
         },
         {
           "type": "hash_bang",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "stmt",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
         {
-          "type": "signature",
+          "type": "ask_stmt",
           "named": true
         },
         {
-          "type": "trait_decl",
+          "type": "expr_stmt",
           "named": true
         },
         {
-          "type": "using",
+          "type": "if_stmt",
+          "named": true
+        },
+        {
+          "type": "let_stmt",
           "named": true
         }
       ]
@@ -5069,6 +1466,20 @@
     "type": "trait_decl",
     "named": true,
     "fields": {
+      "arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "explicit_arguments",
+            "named": true
+          },
+          {
+            "type": "implicit_arguments",
+            "named": true
+          }
+        ]
+      },
       "attributes": {
         "multiple": true,
         "required": false,
@@ -5088,111 +1499,7 @@
             "named": false
           },
           {
-            "type": "ann_expr",
-            "named": true
-          },
-          {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "lam_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "pi_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "sigma_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "type_app_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "type_expr",
             "named": true
           }
         ]
@@ -5207,6 +1514,16 @@
           }
         ]
       },
+      "properties": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "signature",
+            "named": true
+          }
+        ]
+      },
       "visibility": {
         "multiple": false,
         "required": false,
@@ -5217,24 +1534,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "explicit_arguments",
-          "named": true
-        },
-        {
-          "type": "implicit_arguments",
-          "named": true
-        },
-        {
-          "type": "signature",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -5246,111 +1545,7 @@
       "required": false,
       "types": [
         {
-          "type": "ann_expr",
-          "named": true
-        },
-        {
-          "type": "app_expr",
-          "named": true
-        },
-        {
-          "type": "array_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "char",
-          "named": true
-        },
-        {
-          "type": "f32",
-          "named": true
-        },
-        {
-          "type": "f64",
-          "named": true
-        },
-        {
-          "type": "i128",
-          "named": true
-        },
-        {
-          "type": "i16",
-          "named": true
-        },
-        {
-          "type": "i64",
-          "named": true
-        },
-        {
-          "type": "i8",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "lam_expr",
-          "named": true
-        },
-        {
-          "type": "match_expr",
-          "named": true
-        },
-        {
-          "type": "nat",
-          "named": true
-        },
-        {
-          "type": "pi_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "sigma_expr",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tuple_expr",
-          "named": true
-        },
-        {
-          "type": "u1",
-          "named": true
-        },
-        {
-          "type": "u128",
-          "named": true
-        },
-        {
-          "type": "u16",
-          "named": true
-        },
-        {
-          "type": "u32",
-          "named": true
-        },
-        {
-          "type": "u64",
-          "named": true
-        },
-        {
-          "type": "u8",
+          "type": "expr",
           "named": true
         }
       ]
@@ -5365,87 +1560,7 @@
         "required": false,
         "types": [
           {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "primary",
             "named": true
           }
         ]
@@ -5455,91 +1570,54 @@
         "required": true,
         "types": [
           {
-            "type": "array_expr",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "f32",
-            "named": true
-          },
-          {
-            "type": "f64",
-            "named": true
-          },
-          {
-            "type": "i128",
-            "named": true
-          },
-          {
-            "type": "i16",
-            "named": true
-          },
-          {
-            "type": "i64",
-            "named": true
-          },
-          {
-            "type": "i8",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "match_expr",
-            "named": true
-          },
-          {
-            "type": "nat",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple_expr",
-            "named": true
-          },
-          {
-            "type": "u1",
-            "named": true
-          },
-          {
-            "type": "u128",
-            "named": true
-          },
-          {
-            "type": "u16",
-            "named": true
-          },
-          {
-            "type": "u32",
-            "named": true
-          },
-          {
-            "type": "u64",
-            "named": true
-          },
-          {
-            "type": "u8",
+            "type": "primary",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "type_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ann_expr",
+          "named": true
+        },
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "lam_expr",
+          "named": true
+        },
+        {
+          "type": "match_expr",
+          "named": true
+        },
+        {
+          "type": "pi_expr",
+          "named": true
+        },
+        {
+          "type": "primary",
+          "named": true
+        },
+        {
+          "type": "sigma_expr",
+          "named": true
+        },
+        {
+          "type": "type_app_expr",
+          "named": true
+        }
+      ]
     }
   },
   {
