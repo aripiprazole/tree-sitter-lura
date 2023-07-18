@@ -1384,7 +1384,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_literal"
+          "name": "literal"
         }
       ]
     },
@@ -1425,7 +1425,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_primary"
+          "name": "primary"
         },
         {
           "type": "SYMBOL",
@@ -1465,7 +1465,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "_primary"
+            "name": "primary"
           },
           {
             "type": "SYMBOL",
@@ -1542,7 +1542,7 @@
             "name": "callee",
             "content": {
               "type": "SYMBOL",
-              "name": "_primary"
+              "name": "primary"
             }
           },
           {
@@ -1552,7 +1552,7 @@
               "name": "argument",
               "content": {
                 "type": "SYMBOL",
-                "name": "_primary"
+                "name": "primary"
               }
             }
           }
@@ -1570,7 +1570,7 @@
             "name": "callee",
             "content": {
               "type": "SYMBOL",
-              "name": "_primary"
+              "name": "primary"
             }
           },
           {
@@ -1580,7 +1580,7 @@
               "name": "argument",
               "content": {
                 "type": "SYMBOL",
-                "name": "_primary"
+                "name": "primary"
               }
             }
           },
@@ -1876,7 +1876,7 @@
           "value": 1,
           "content": {
             "type": "SYMBOL",
-            "name": "_primary"
+            "name": "primary"
           }
         },
         {
@@ -2159,7 +2159,7 @@
         }
       ]
     },
-    "_primary": {
+    "primary": {
       "type": "PREC",
       "value": 1,
       "content": {
@@ -2167,7 +2167,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "_literal"
+            "name": "literal"
           },
           {
             "type": "SYMBOL",
@@ -2196,7 +2196,7 @@
         ]
       }
     },
-    "_literal": {
+    "literal": {
       "type": "CHOICE",
       "members": [
         {
@@ -2861,7 +2861,7 @@
   "conflicts": [
     [
       "path",
-      "_primary"
+      "primary"
     ],
     [
       "app_expr",

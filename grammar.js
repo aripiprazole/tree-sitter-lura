@@ -8,7 +8,7 @@ module.exports = grammar({
   ],
 
   conflicts: $ => [
-    [$.path, $._primary],
+    [$.path, $.primary],
     [$.app_expr, $._expr],
     [$.if_stmt, $.if_expr],
     [$.type_app_expr, $.app_expr],
@@ -230,7 +230,7 @@ module.exports = grammar({
     ),
 
     // Patterns
-    _pattern: $ => choice($.cons_pattern, $.rest_pattern, $._literal),
+    _pattern: $ => choice($.cons_pattern, $.rest_pattern, $.literal),
 
     rest_pattern: $ => '..',
 
@@ -241,7 +241,7 @@ module.exports = grammar({
 
     // Expressions
     _expr: $ => choice(
-      $._primary,
+      $.primary,
       $.match_expr,
       $.sigma_expr,
       $.app_expr,
@@ -252,7 +252,7 @@ module.exports = grammar({
     ),
 
     _type_expr: $ => prec(2, choice(
-      $._primary,
+      $.primary,
       $.match_expr,
       $.sigma_expr,
       $.type_app_expr,
@@ -269,13 +269,13 @@ module.exports = grammar({
     )),
 
     type_app_expr: $ => prec.left(seq(
-      field('callee', $._primary),
-      repeat(field('argument', $._primary)),
+      field('callee', $.primary),
+      repeat(field('argument', $.primary)),
     )),
 
     app_expr: $ => prec.left(seq(
-      field('callee', $._primary),
-      repeat(field('argument', $._primary)),
+      field('callee', $.primary),
+      repeat(field('argument', $.primary)),
       optional($.block),
     )),
 
@@ -327,7 +327,7 @@ module.exports = grammar({
     )),
 
     pi_parameter: $ => choice(
-      prec(1, $._primary),
+      prec(1, $.primary),
       prec(3, seq(
         '(',
         optional($._parameter_set),
@@ -385,8 +385,8 @@ module.exports = grammar({
     _arm_body: $ => choice($.block, $._expr),
 
     // Primaries
-    _primary: $ => prec(1, choice(
-      $._literal,
+    primary: $ => prec(1, choice(
+      $.literal,
       $.identifier,
       $.tuple_expr,
       $.array_expr,
@@ -395,7 +395,7 @@ module.exports = grammar({
       $.return_expr,
     )),
 
-    _literal: $ => choice(
+    literal: $ => choice(
       $.string,
       $.char,
       $.f32,
