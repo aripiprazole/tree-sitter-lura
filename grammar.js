@@ -192,7 +192,7 @@ module.exports = grammar({
 
     constructor_parameter: $ => prec.left(seq(
       prec(3, optional(seq(field('name', $.identifier), ':'))),
-      field('parameter_type', $._expr),
+      field('parameter_type', $._type_expr),
     )),
 
     // Statements
@@ -308,14 +308,14 @@ module.exports = grammar({
     ann_expr: $ => prec.left(seq(
       field('value', $._expr),
       ':',
-      field('against', $._expr),
+      field('against', $._type_expr),
     )),
 
     parameter: $ => prec.left(seq(
       field('pattern', $._pattern),
       optional(seq(
         ':',
-        field('parameter_type', $._expr),
+        field('parameter_type', $._type_expr),
       )),
     )),
 

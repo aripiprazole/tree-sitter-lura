@@ -12,10 +12,6 @@
             "named": true
           },
           {
-            "type": "app_expr",
-            "named": true
-          },
-          {
             "type": "binary_expr",
             "named": true
           },
@@ -37,6 +33,10 @@
           },
           {
             "type": "sigma_expr",
+            "named": true
+          },
+          {
+            "type": "type_app_expr",
             "named": true
           }
         ]
@@ -809,10 +809,6 @@
             "named": true
           },
           {
-            "type": "app_expr",
-            "named": true
-          },
-          {
             "type": "binary_expr",
             "named": true
           },
@@ -834,6 +830,10 @@
           },
           {
             "type": "sigma_expr",
+            "named": true
+          },
+          {
+            "type": "type_app_expr",
             "named": true
           }
         ]
@@ -1705,10 +1705,6 @@
             "named": true
           },
           {
-            "type": "app_expr",
-            "named": true
-          },
-          {
             "type": "binary_expr",
             "named": true
           },
@@ -1730,6 +1726,10 @@
           },
           {
             "type": "sigma_expr",
+            "named": true
+          },
+          {
+            "type": "type_app_expr",
             "named": true
           }
         ]
