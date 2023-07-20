@@ -2,7 +2,6 @@ module.exports = grammar({
   name: 'lura',
 
   extras: $ => [
-    $.doc_string,
     $.line_comment,
     /[\s\r\n\uFEFF\u2060\u200B]/,
   ],
@@ -31,8 +30,8 @@ module.exports = grammar({
     identifier: $ => choice($.simple_identifier, $.symbol_identifier),
 
     path: $ => seq(
-      field('segments', $.identifier),
-      repeat(seq('.', field('segments', $.identifier))),
+      field('segment', $.identifier),
+      repeat(seq('.', field('segment', $.identifier))),
     ),
     // Declarations
 
@@ -73,6 +72,7 @@ module.exports = grammar({
     ),
 
     command: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
       repeat(field('attribute', $.attribute)),
       '#',
       field('command', $.path),
@@ -84,6 +84,7 @@ module.exports = grammar({
     ),
 
     signature: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
       repeat(field('attribute', $.attribute)),
       optional(field('visibility', $.visibility)),
       field('name', $.path),
@@ -93,6 +94,7 @@ module.exports = grammar({
     ),
 
     clause: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
       repeat(field('attribute', $.attribute)),
       field('name', $.path),
       repeat(field('pattern', $._pattern)),
@@ -101,6 +103,7 @@ module.exports = grammar({
     ),
 
     data_decl: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
       repeat(field('attribute', $.attribute)),
       optional(field('visibility', $.visibility)),
       'data',
@@ -111,6 +114,7 @@ module.exports = grammar({
     ),
 
     trait_decl: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
       repeat(field('attribute', $.attribute)),
       optional(field('visibility', $.visibility)),
       'trait',
@@ -121,6 +125,7 @@ module.exports = grammar({
     ),
 
     class_decl: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
       repeat(field('attribute', $.attribute)),
       optional(field('visibility', $.visibility)),
       'class',
@@ -154,6 +159,7 @@ module.exports = grammar({
     ),
 
     _data_constructor: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
       repeat(field('attribute', $.attribute)),
       choice(
         $.signature_constructor,

@@ -519,11 +519,25 @@
             "named": true
           },
           {
+            "type": "doc_string",
+            "named": true
+          },
+          {
             "type": "function_constructor",
             "named": true
           },
           {
             "type": "signature_constructor",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
             "named": true
           }
         ]
@@ -570,6 +584,16 @@
         "types": [
           {
             "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
             "named": true
           }
         ]
@@ -700,6 +724,16 @@
         "types": [
           {
             "type": "path",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
             "named": true
           }
         ]
@@ -873,11 +907,25 @@
             "named": true
           },
           {
+            "type": "doc_string",
+            "named": true
+          },
+          {
             "type": "function_constructor",
             "named": true
           },
           {
             "type": "signature_constructor",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
             "named": true
           }
         ]
@@ -1819,7 +1867,7 @@
     "type": "path",
     "named": true,
     "fields": {
-      "segments": {
+      "segment": {
         "multiple": true,
         "required": true,
         "types": [
@@ -2111,6 +2159,16 @@
           }
         ]
       },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -2328,6 +2386,16 @@
           },
           {
             "type": "type_app_expr",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
             "named": true
           }
         ]
