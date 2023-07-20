@@ -89,7 +89,7 @@ module.exports = grammar({
       optional(field('visibility', $.visibility)),
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
-      optional(field('clause_type', $._clause_type)),
+      optional(field('clause_type', $.clause_type)),
       optional(field('value', $._signature_value)),
     ),
 
@@ -109,7 +109,7 @@ module.exports = grammar({
       'data',
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
-      optional(field('clause_type', $._clause_type)),
+      optional(field('clause_type', $.clause_type)),
       optional($._data_body),
     ),
 
@@ -120,7 +120,7 @@ module.exports = grammar({
       'trait',
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
-      optional(field('clause_type', $._clause_type)),
+      optional(field('clause_type', $.clause_type)),
       optional($._class_body),
     ),
 
@@ -131,7 +131,7 @@ module.exports = grammar({
       'class',
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
-      optional(field('clause_type', $._clause_type)),
+      optional(field('clause_type', $.clause_type)),
       optional($._data_body),
     ),
 
@@ -149,7 +149,7 @@ module.exports = grammar({
 
     _class_property: $ => choice($.signature),
 
-    _clause_type: $ => seq(':', field('clause_type', $._type_expr)),
+    clause_type: $ => seq(':', field('clause_type', $._type_expr)),
 
     _data_body: $ => seq(
       '{',

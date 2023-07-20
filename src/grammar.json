@@ -517,7 +517,7 @@
               "name": "clause_type",
               "content": {
                 "type": "SYMBOL",
-                "name": "_clause_type"
+                "name": "clause_type"
               }
             },
             {
@@ -681,7 +681,7 @@
               "name": "clause_type",
               "content": {
                 "type": "SYMBOL",
-                "name": "_clause_type"
+                "name": "clause_type"
               }
             },
             {
@@ -775,7 +775,7 @@
               "name": "clause_type",
               "content": {
                 "type": "SYMBOL",
-                "name": "_clause_type"
+                "name": "clause_type"
               }
             },
             {
@@ -869,7 +869,7 @@
               "name": "clause_type",
               "content": {
                 "type": "SYMBOL",
-                "name": "_clause_type"
+                "name": "clause_type"
               }
             },
             {
@@ -974,7 +974,7 @@
         }
       ]
     },
-    "_clause_type": {
+    "clause_type": {
       "type": "SEQ",
       "members": [
         {
