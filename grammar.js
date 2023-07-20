@@ -206,8 +206,8 @@ module.exports = grammar({
     if_stmt: $ => seq(
       'if',
       field('condition', $._expr),
-      field('then', $._then_body),
-      optional(field('otherwise', $._else_body)),
+      field('then', $.then_body),
+      optional(field('otherwise', $.otherwise_body)),
     ),
 
     ask_stmt: $ => seq(
@@ -358,8 +358,8 @@ module.exports = grammar({
     if_expr: $ => seq(
       'if',
       field('condition', $._expr),
-      field('then', $._then_body),
-      field('otherwise', $._else_body),
+      field('then', $.then_body),
+      field('otherwise', $.otherwise_body),
     ),
 
     match_expr: $ => seq(
@@ -381,12 +381,15 @@ module.exports = grammar({
       field('body', $._arm_body),
     ),
 
-    _then_body: $ => prec.left(choice(
+    then_body: $ => prec.left(choice(
       $.block,
       seq('then', $._expr),
     )),
 
-    _else_body: $ => prec.left(choice($.block, $._expr)),
+    otherwise_body: $ => prec.left(seq(
+      'else',
+      choice($.block, $._expr)
+    )),
 
     _arm_body: $ => choice($.block, $._expr),
 

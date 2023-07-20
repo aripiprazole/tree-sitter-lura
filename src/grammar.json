@@ -1303,7 +1303,7 @@
           "name": "then",
           "content": {
             "type": "SYMBOL",
-            "name": "_then_body"
+            "name": "then_body"
           }
         },
         {
@@ -1314,7 +1314,7 @@
               "name": "otherwise",
               "content": {
                 "type": "SYMBOL",
-                "name": "_else_body"
+                "name": "otherwise_body"
               }
             },
             {
@@ -2077,7 +2077,7 @@
           "name": "then",
           "content": {
             "type": "SYMBOL",
-            "name": "_then_body"
+            "name": "then_body"
           }
         },
         {
@@ -2085,7 +2085,7 @@
           "name": "otherwise",
           "content": {
             "type": "SYMBOL",
-            "name": "_else_body"
+            "name": "otherwise_body"
           }
         }
       ]
@@ -2180,7 +2180,7 @@
         }
       ]
     },
-    "_then_body": {
+    "then_body": {
       "type": "PREC_LEFT",
       "value": 0,
       "content": {
@@ -2206,19 +2206,28 @@
         ]
       }
     },
-    "_else_body": {
+    "otherwise_body": {
       "type": "PREC_LEFT",
       "value": 0,
       "content": {
-        "type": "CHOICE",
+        "type": "SEQ",
         "members": [
           {
-            "type": "SYMBOL",
-            "name": "block"
+            "type": "STRING",
+            "value": "else"
           },
           {
-            "type": "SYMBOL",
-            "name": "_expr"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "block"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_expr"
+              }
+            ]
           }
         ]
       }
