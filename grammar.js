@@ -12,6 +12,39 @@ module.exports = grammar({
     [$.if_stmt, $.if_expr],
     [$.type_app_expr, $.app_expr],
     [$._expr, $.type_app_expr, $.app_expr],
+
+    [$._type_expr, $.primary],
+    [$._pattern, $.primary],
+  ],
+
+  precedences: $ => [
+    [
+      $.string,
+      $.char,
+      $.f32,
+      $.f64,
+      $.i32,
+      $.u32,
+      $.u1,
+      $.i8,
+      $.u8,
+      $.i16,
+      $.u16,
+      $.i64,
+      $.u64,
+      $.i128,
+      $.u128,
+      $.nat,
+    ],
+    [$.sigma_expr, $.array_expr],
+    [$.primary, $._expr],
+    [$._type_expr, $.primary],
+    [$._type_expr, $.type_app_expr, $._expr, $.app_expr],
+    [$._arm_body, $.sigma_expr, $.binary_expr],
+    [$._arm_body, $.ann_expr],
+    [$._pi_parameter_set, $.ann_expr],
+    [$._pi_parameter_set, $.pi_expr],
+    [$._pi_parameter_set, $.sigma_expr],
   ],
 
   rules: {
@@ -90,7 +123,7 @@ module.exports = grammar({
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
       optional(field('clause_type', $.clause_type)),
-      optional(field('value', $._signature_value)),
+      optional(field('value', $.block)),
     ),
 
     clause: $ => seq(
@@ -110,7 +143,7 @@ module.exports = grammar({
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
       optional(field('clause_type', $.clause_type)),
-      optional($._data_body),
+      optional(field('data_body', $._data_body)),
     ),
 
     trait_decl: $ => seq(
@@ -121,7 +154,7 @@ module.exports = grammar({
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
       optional(field('clause_type', $.clause_type)),
-      optional($._class_body),
+      optional(field('trait_body', $._class_body)),
     ),
 
     class_decl: $ => seq(
@@ -132,7 +165,7 @@ module.exports = grammar({
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
       optional(field('clause_type', $.clause_type)),
-      optional($._data_body),
+      optional(field('class_body', $._class_body)),
     ),
 
     _class_body: $ => seq(
@@ -145,26 +178,21 @@ module.exports = grammar({
       '}'
     ),
 
-    _signature_value: $ => prec(5, $.block),
-
     _class_property: $ => choice($.signature),
 
     clause_type: $ => seq(':', field('clause_type', $._type_expr)),
 
     _data_body: $ => seq(
       '{',
-      optional($._data_constructors),
-      optional(seq(';', $._data_methods)),
+      optional(field('constructors', $._data_constructors)),
+      optional(seq(';', field('methods', $._data_methods))),
       '}'
     ),
 
     _data_constructor: $ => seq(
       repeat(field('doc_string', $.doc_string)),
       repeat(field('attribute', $.attribute)),
-      choice(
-        $.signature_constructor,
-        $.function_constructor,
-      ),
+      field('constructor', choice($.signature_constructor, $.function_constructor)),
     ),
 
     _data_constructors: $ => seq(
@@ -187,13 +215,14 @@ module.exports = grammar({
 
     function_constructor: $ => seq(
       field('name', $.path),
-      repeat(field('parameter', $.constructor_parameter)),
+      optional(seq(
+        '(',
+        field('parameter', $._type_expr),
+        repeat(seq(',', field('parameter', $._type_expr))),
+        optional(','),
+        ')',
+      )),
     ),
-
-    constructor_parameter: $ => prec.left(seq(
-      prec(3, optional(seq(field('name', $.identifier), ':'))),
-      field('parameter_type', $._type_expr),
-    )),
 
     // Statements
     _stmt: $ => choice(
@@ -257,7 +286,7 @@ module.exports = grammar({
       $.binary_expr,
     ),
 
-    _type_expr: $ => prec(2, choice(
+    _type_expr: $ => choice(
       $.primary,
       $.match_expr,
       $.sigma_expr,
@@ -266,7 +295,7 @@ module.exports = grammar({
       $.ann_expr,
       $.pi_expr,
       $.binary_expr,
-    )),
+    ),
 
     binary_expr: $ => prec.left(seq(
       field('lhs', $._expr),
@@ -307,7 +336,7 @@ module.exports = grammar({
 
     ann_expr: $ => prec.left(seq(
       field('value', $._expr),
-      ':',
+      'as',
       field('against', $._type_expr),
     )),
 
@@ -320,27 +349,38 @@ module.exports = grammar({
     )),
 
     _parameter_set: $ => seq(
-      $.parameter,
-      repeat(seq(',', $.parameter)),
+      field('parameter', $.parameter),
+      repeat(seq(',', field('parameter',$.parameter))),
       optional(','),
     ),
 
-    lam_expr: $ => prec.right(1, seq(
+    lam_expr: $ => prec.left(seq(
       '|',
       optional(field('parameter', $._parameter_set)),
       '|',
       field('value', $._expr),
     )),
 
-    pi_expr: $ => prec.right(2, seq(
-      field('parameter', $._type_expr),
-      '->',
+    pi_named_parameter_set: $ => seq(
+      '(',
+      field('parameter', $._parameter_set),
+      ')',
+    ),
+
+    _pi_parameter_set: $ => choice(
+      $.pi_named_parameter_set,
+      $._type_expr,
+    ),
+
+    pi_expr: $ => prec.left(seq(
+      field('parameter', $._pi_parameter_set),
+      '=>',
       field('value', $._type_expr),
     )),
 
-    sigma_expr: $ => prec.right(3, seq(
+    sigma_expr: $ => prec.left(seq(
       '[',
-      optional(field('parameter', $._parameter_set)),
+      field('parameter', $._parameter_set),
       ']',
       '->',
       field('value', $._type_expr),
@@ -379,13 +419,13 @@ module.exports = grammar({
 
     otherwise_body: $ => prec.left(seq(
       'else',
-      choice($.block, $._expr)
+      field('value', $._arm_body)
     )),
 
     _arm_body: $ => choice($.block, $._expr),
 
     // Primaries
-    primary: $ => prec(1, choice(
+    primary: $ => choice(
       $.literal,
       $.identifier,
       $.tuple_expr,
@@ -393,7 +433,7 @@ module.exports = grammar({
       $.if_expr,
       $.match_expr,
       $.return_expr,
-    )),
+    ),
 
     literal: $ => choice(
       $.string,
@@ -415,20 +455,20 @@ module.exports = grammar({
 
     _integer: $ => choice($._decimal, $.octal, $.hex, $.binary),
 
-    f32: $ => prec(14, seq($._float, optional('f32'))),
-    f64: $ => prec(13, seq($._float, optional('f64'))),
-    i32: $ => prec(12, seq($._integer, optional('u32'))),
-    u32: $ => prec(11, seq($._integer, optional('u32'))),
-    u1: $ => prec(10, seq($._integer, optional('u1'))),
-    i8: $ => prec(9, seq($._integer, optional('i8'))),
-    u8: $ => prec(8, seq($._integer, optional('u8'))),
-    i16: $ => prec(7, seq($._integer, optional('i16'))),
-    u16: $ => prec(6, seq($._integer, optional('u16'))),
-    i64: $ => prec(5, seq($._integer, optional('i64'))),
-    u64: $ => prec(4, seq($._integer, optional('u64'))),
-    i128: $ => prec(3, seq($._integer, optional('i128'))),
-    u128: $ => prec(2, seq($._integer, optional('u128'))),
-    nat: $ => prec(1, seq($._integer, optional('n'))),
+    f32: $ => seq($._float, optional('f32')),
+    f64: $ => seq($._float, optional('f64')),
+    i32: $ => seq($._integer, optional('u32')),
+    u32: $ => seq($._integer, optional('u32')),
+    u1: $ => seq($._integer, optional('u1')),
+    i8: $ => seq($._integer, optional('i8')),
+    u8: $ => seq($._integer, optional('u8')),
+    i16: $ => seq($._integer, optional('i16')),
+    u16: $ => seq($._integer, optional('u16')),
+    i64: $ => seq($._integer, optional('i64')),
+    u64: $ => seq($._integer, optional('u64')),
+    i128: $ => seq($._integer, optional('i128')),
+    u128: $ => seq($._integer, optional('u128')),
+    nat: $ => seq($._integer, optional('n')),
 
     octal: $ => seq(/Oo/i, $._octal),
     hex: $ => seq(/Ox/i, $._hex),
