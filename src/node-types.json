@@ -1309,6 +1309,20 @@
     "type": "lam_expr",
     "named": true,
     "fields": {
+      "parameter": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "parameter",
+            "named": true
+          }
+        ]
+      },
       "value": {
         "multiple": false,
         "required": true,
@@ -1347,16 +1361,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "parameter",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1779,7 +1783,35 @@
         "required": true,
         "types": [
           {
-            "type": "pi_parameter",
+            "type": "ann_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "lam_expr",
+            "named": true
+          },
+          {
+            "type": "match_expr",
+            "named": true
+          },
+          {
+            "type": "pi_expr",
+            "named": true
+          },
+          {
+            "type": "primary",
+            "named": true
+          },
+          {
+            "type": "sigma_expr",
+            "named": true
+          },
+          {
+            "type": "type_app_expr",
             "named": true
           }
         ]
@@ -1822,25 +1854,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "pi_parameter",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "parameter",
-          "named": true
-        },
-        {
-          "type": "primary",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1930,6 +1943,20 @@
     "type": "sigma_expr",
     "named": true,
     "fields": {
+      "parameter": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "parameter",
+            "named": true
+          }
+        ]
+      },
       "value": {
         "multiple": false,
         "required": true,
@@ -1968,16 +1995,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "parameter",
-          "named": true
-        }
-      ]
     }
   },
   {

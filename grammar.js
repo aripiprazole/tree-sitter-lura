@@ -325,31 +325,22 @@ module.exports = grammar({
       optional(','),
     ),
 
-    lam_expr: $ => prec.left(1, seq(
+    lam_expr: $ => prec.right(1, seq(
       '|',
-      optional($._parameter_set),
+      optional(field('parameter', $._parameter_set)),
       '|',
       field('value', $._expr),
     )),
 
-    pi_parameter: $ => choice(
-      prec(1, $.primary),
-      prec(3, seq(
-        '(',
-        optional($._parameter_set),
-        ')',
-      )),
-    ),
-
     pi_expr: $ => prec.right(2, seq(
-      field('parameter', $.pi_parameter),
+      field('parameter', $._type_expr),
       '->',
       field('value', $._type_expr),
     )),
 
-    sigma_expr: $ => prec.left(3, seq(
+    sigma_expr: $ => prec.right(3, seq(
       '[',
-      optional($._parameter_set),
+      optional(field('parameter', $._parameter_set)),
       ']',
       '->',
       field('value', $._type_expr),
