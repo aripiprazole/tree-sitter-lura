@@ -825,14 +825,6 @@
         "required": false,
         "types": [
           {
-            "type": "attribute",
-            "named": true
-          },
-          {
-            "type": "doc_string",
-            "named": true
-          },
-          {
             "type": "function_constructor",
             "named": true
           },
@@ -849,14 +841,6 @@
           {
             "type": ",",
             "named": false
-          },
-          {
-            "type": "attribute",
-            "named": true
-          },
-          {
-            "type": "doc_string",
-            "named": true
           },
           {
             "type": "function_constructor",
@@ -879,14 +863,6 @@
           {
             "type": ";",
             "named": false
-          },
-          {
-            "type": "attribute",
-            "named": true
-          },
-          {
-            "type": "doc_string",
-            "named": true
           },
           {
             "type": "function_constructor",
@@ -1040,6 +1016,26 @@
     "type": "function_constructor",
     "named": true,
     "fields": {
+      "attribute": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -2156,6 +2152,26 @@
     "type": "signature_constructor",
     "named": true,
     "fields": {
+      "attribute": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
+            "named": true
+          }
+        ]
+      },
       "field_type": {
         "multiple": false,
         "required": true,

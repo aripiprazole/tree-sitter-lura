@@ -1050,46 +1050,15 @@
       ]
     },
     "_data_constructor": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "REPEAT",
-          "content": {
-            "type": "FIELD",
-            "name": "doc_string",
-            "content": {
-              "type": "SYMBOL",
-              "name": "doc_string"
-            }
-          }
+          "type": "SYMBOL",
+          "name": "signature_constructor"
         },
         {
-          "type": "REPEAT",
-          "content": {
-            "type": "FIELD",
-            "name": "attribute",
-            "content": {
-              "type": "SYMBOL",
-              "name": "attribute"
-            }
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "constructor",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "signature_constructor"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "function_constructor"
-              }
-            ]
-          }
+          "type": "SYMBOL",
+          "name": "function_constructor"
         }
       ]
     },
@@ -1187,6 +1156,28 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "FIELD",
+            "name": "doc_string",
+            "content": {
+              "type": "SYMBOL",
+              "name": "doc_string"
+            }
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "FIELD",
+            "name": "attribute",
+            "content": {
+              "type": "SYMBOL",
+              "name": "attribute"
+            }
+          }
+        },
+        {
           "type": "FIELD",
           "name": "name",
           "content": {
@@ -1211,6 +1202,28 @@
     "function_constructor": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "FIELD",
+            "name": "doc_string",
+            "content": {
+              "type": "SYMBOL",
+              "name": "doc_string"
+            }
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "FIELD",
+            "name": "attribute",
+            "content": {
+              "type": "SYMBOL",
+              "name": "attribute"
+            }
+          }
+        },
         {
           "type": "FIELD",
           "name": "name",

@@ -189,11 +189,7 @@ module.exports = grammar({
       '}'
     ),
 
-    _data_constructor: $ => seq(
-      repeat(field('doc_string', $.doc_string)),
-      repeat(field('attribute', $.attribute)),
-      field('constructor', choice($.signature_constructor, $.function_constructor)),
-    ),
+    _data_constructor: $ => choice($.signature_constructor, $.function_constructor),
 
     _data_constructors: $ => seq(
       field('constructor', $._data_constructor),
@@ -208,12 +204,16 @@ module.exports = grammar({
     ),
 
     signature_constructor: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
+      repeat(field('attribute', $.attribute)),
       field('name', $.path),
       ':',
       field('field_type', $._type_expr),
     ),
 
     function_constructor: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
+      repeat(field('attribute', $.attribute)),
       field('name', $.path),
       optional(seq(
         '(',
