@@ -20,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/aripiprazole/lura/issues"
   },
-  "homepage": "https://github.com/aripiprazole/lura#readme"
+  "homepage": "https://github.com/aripiprazole/lura#readme",
+  "tree-sitter": [
+    {
+      "scope": "source.lura",
+      "file-types": [
+        "lura"
+      ],
+      "highlights": [
+        "queries/highlights.scm",
+        "queries/locals.scm"
+      ],
+      "injection-regex": "^(lura)$"
+    }
+  ]
 }

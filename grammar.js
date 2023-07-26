@@ -374,7 +374,7 @@ module.exports = grammar({
 
     pi_expr: $ => prec.left(seq(
       field('parameter', $._pi_parameter_set),
-      '=>',
+      '->',
       field('value', $._type_expr),
     )),
 
@@ -382,7 +382,7 @@ module.exports = grammar({
       '[',
       field('parameter', $._parameter_set),
       ']',
-      '->',
+      '=>',
       field('value', $._type_expr),
     )),
 
