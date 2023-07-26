@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "tree_sitter_asena_binding",
+      "target_name": "tree_sitter_lura_binding",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "src"
