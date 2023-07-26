@@ -184,8 +184,8 @@ module.exports = grammar({
 
     _data_body: $ => seq(
       '{',
-      optional(field('constructors', $._data_constructors)),
-      optional(seq(';', field('methods', $._data_methods))),
+      optional(field('constructor', $._data_constructors)),
+      optional(seq(';', field('method', $._data_methods))),
       '}'
     ),
 

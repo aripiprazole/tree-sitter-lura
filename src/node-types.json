@@ -825,20 +825,6 @@
         "required": false,
         "types": [
           {
-            "type": "function_constructor",
-            "named": true
-          },
-          {
-            "type": "signature_constructor",
-            "named": true
-          }
-        ]
-      },
-      "constructors": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
             "type": ",",
             "named": false
           },
@@ -906,7 +892,7 @@
           }
         ]
       },
-      "methods": {
+      "method": {
         "multiple": true,
         "required": false,
         "types": [

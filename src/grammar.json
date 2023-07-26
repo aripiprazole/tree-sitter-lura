@@ -1007,7 +1007,7 @@
           "members": [
             {
               "type": "FIELD",
-              "name": "constructors",
+              "name": "constructor",
               "content": {
                 "type": "SYMBOL",
                 "name": "_data_constructors"
@@ -1030,7 +1030,7 @@
                 },
                 {
                   "type": "FIELD",
-                  "name": "methods",
+                  "name": "method",
                   "content": {
                     "type": "SYMBOL",
                     "name": "_data_methods"
