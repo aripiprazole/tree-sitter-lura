@@ -102,37 +102,41 @@
       ]
     },
     "path": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "segment",
-          "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "."
-              },
-              {
-                "type": "FIELD",
-                "name": "segment",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "identifier"
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "segment",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "."
+                },
+                {
+                  "type": "FIELD",
+                  "name": "segment",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "identifier"
+                  }
                 }
-              }
-            ]
+              ]
+            }
           }
-        }
-      ]
+        ]
+      }
     },
     "_decl": {
       "type": "CHOICE",
@@ -1564,6 +1568,10 @@
         {
           "type": "SYMBOL",
           "name": "binary_expr"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "forall_expr"
         }
       ]
     },
@@ -1601,8 +1609,44 @@
         {
           "type": "SYMBOL",
           "name": "binary_expr"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "forall_expr"
         }
       ]
+    },
+    "forall_expr": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "FIELD",
+              "name": "parameter",
+              "content": {
+                "type": "SYMBOL",
+                "name": "forall_parameter"
+              }
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "."
+          },
+          {
+            "type": "FIELD",
+            "name": "value",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_type_expr"
+            }
+          }
+        ]
+      }
     },
     "binary_expr": {
       "type": "PREC_LEFT",
@@ -1845,7 +1889,7 @@
           },
           {
             "type": "STRING",
-            "value": "as"
+            "value": "is"
           },
           {
             "type": "FIELD",
@@ -1908,7 +1952,7 @@
           "name": "parameter",
           "content": {
             "type": "SYMBOL",
-            "name": "parameter"
+            "name": "_any_parameter"
           }
         },
         {
@@ -1925,7 +1969,7 @@
                 "name": "parameter",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "parameter"
+                  "name": "_any_parameter"
                 }
               }
             ]
@@ -1942,6 +1986,40 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "forall_parameter": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "^"
+          },
+          {
+            "type": "FIELD",
+            "name": "path",
+            "content": {
+              "type": "SYMBOL",
+              "name": "path"
+            }
+          }
+        ]
+      }
+    },
+    "_any_parameter": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "forall_parameter"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "parameter"
         }
       ]
     },
@@ -3102,6 +3180,16 @@
       {
         "type": "SYMBOL",
         "name": "sigma_expr"
+      }
+    ],
+    [
+      {
+        "type": "SYMBOL",
+        "name": "_pi_parameter_set"
+      },
+      {
+        "type": "SYMBOL",
+        "name": "forall_expr"
       }
     ]
   ],

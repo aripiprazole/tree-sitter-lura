@@ -45,6 +45,7 @@ module.exports = grammar({
     [$._pi_parameter_set, $.ann_expr],
     [$._pi_parameter_set, $.pi_expr],
     [$._pi_parameter_set, $.sigma_expr],
+    [$._pi_parameter_set, $.forall_expr]
   ],
 
   rules: {
@@ -62,10 +63,10 @@ module.exports = grammar({
 
     identifier: $ => choice($.simple_identifier, $.symbol_identifier),
 
-    path: $ => seq(
+    path: $ => prec.left(seq(
       field('segment', $.identifier),
       repeat(seq('.', field('segment', $.identifier))),
-    ),
+    )),
     // Declarations
 
     _decl: $ => choice(
@@ -284,6 +285,7 @@ module.exports = grammar({
       $.ann_expr,
       $.pi_expr,
       $.binary_expr,
+      $.forall_expr,
     ),
 
     _type_expr: $ => choice(
@@ -295,7 +297,14 @@ module.exports = grammar({
       $.ann_expr,
       $.pi_expr,
       $.binary_expr,
+      $.forall_expr,
     ),
+
+    forall_expr: $ => prec.left(seq(
+      repeat1(field('parameter', $.forall_parameter)),
+      '.',
+      field('value', $._type_expr),
+    )),
 
     binary_expr: $ => prec.left(seq(
       field('lhs', $._expr),
@@ -336,7 +345,7 @@ module.exports = grammar({
 
     ann_expr: $ => prec.left(seq(
       field('value', $._expr),
-      'as',
+      'is',
       field('against', $._type_expr),
     )),
 
@@ -349,9 +358,19 @@ module.exports = grammar({
     )),
 
     _parameter_set: $ => seq(
-      field('parameter', $.parameter),
-      repeat(seq(',', field('parameter',$.parameter))),
+      field('parameter', $._any_parameter),
+      repeat(seq(',', field('parameter', $._any_parameter))),
       optional(','),
+    ),
+
+    forall_parameter: $ => prec.left(seq(
+      '^',
+      field('path', $.path),
+    )),
+
+    _any_parameter: $ => choice(
+      $.forall_parameter,
+      $.parameter,
     ),
 
     lam_expr: $ => prec.left(seq(
