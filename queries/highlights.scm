@@ -43,7 +43,8 @@
   "else"
   "let"
   "using"
-  "as"
+  "is"
+  "type"
 ] @keyword
 
 (line_comment) @comment

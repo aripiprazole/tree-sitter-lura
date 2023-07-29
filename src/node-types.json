@@ -2491,6 +2491,10 @@
             "named": true
           },
           {
+            "type": "type_decl",
+            "named": true
+          },
+          {
             "type": "using",
             "named": true
           }
@@ -2739,6 +2743,118 @@
         "types": [
           {
             "type": "primary",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "type_decl",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "explicit_arguments",
+            "named": true
+          },
+          {
+            "type": "implicit_arguments",
+            "named": true
+          }
+        ]
+      },
+      "attribute": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "clause_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "clause_type",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "path",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "ann_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "forall_expr",
+            "named": true
+          },
+          {
+            "type": "lam_expr",
+            "named": true
+          },
+          {
+            "type": "match_expr",
+            "named": true
+          },
+          {
+            "type": "pi_expr",
+            "named": true
+          },
+          {
+            "type": "primary",
+            "named": true
+          },
+          {
+            "type": "sigma_expr",
+            "named": true
+          },
+          {
+            "type": "type_app_expr",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
             "named": true
           }
         ]
@@ -3128,6 +3244,10 @@
   },
   {
     "type": "trait",
+    "named": false
+  },
+  {
+    "type": "type",
     "named": false
   },
   {
