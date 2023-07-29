@@ -1124,12 +1124,12 @@
     "type": "forall_parameter",
     "named": true,
     "fields": {
-      "path": {
+      "identifier": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "path",
+            "type": "identifier",
             "named": true
           }
         ]

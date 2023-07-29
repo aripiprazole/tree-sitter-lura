@@ -381,7 +381,7 @@ module.exports = grammar({
 
     forall_parameter: $ => prec.left(seq(
       '^',
-      field('path', $.path),
+      field('identifier', $.identifier),
     )),
 
     _any_parameter: $ => choice(

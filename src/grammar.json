@@ -2145,10 +2145,10 @@
           },
           {
             "type": "FIELD",
-            "name": "path",
+            "name": "identifier",
             "content": {
               "type": "SYMBOL",
-              "name": "path"
+              "name": "identifier"
             }
           }
         ]
