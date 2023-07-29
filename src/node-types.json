@@ -2160,10 +2160,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_expr",
           "named": true
         },
@@ -2173,6 +2169,10 @@
         },
         {
           "type": "match_expr",
+          "named": true
+        },
+        {
+          "type": "path",
           "named": true
         },
         {

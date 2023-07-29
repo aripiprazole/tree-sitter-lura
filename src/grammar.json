@@ -102,7 +102,7 @@
       ]
     },
     "path": {
-      "type": "PREC_LEFT",
+      "type": "PREC_RIGHT",
       "value": 0,
       "content": {
         "type": "SEQ",
@@ -2500,7 +2500,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "path"
         },
         {
           "type": "SYMBOL",
@@ -3128,7 +3128,7 @@
   ],
   "conflicts": [
     [
-      "path",
+      "cons_pattern",
       "primary"
     ],
     [
@@ -3334,6 +3334,16 @@
       {
         "type": "SYMBOL",
         "name": "forall_expr"
+      }
+    ],
+    [
+      {
+        "type": "SYMBOL",
+        "name": "path"
+      },
+      {
+        "type": "SYMBOL",
+        "name": "primary"
       }
     ]
   ],

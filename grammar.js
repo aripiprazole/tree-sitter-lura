@@ -7,7 +7,7 @@ module.exports = grammar({
   ],
 
   conflicts: $ => [
-    [$.path, $.primary],
+    [$.cons_pattern, $.primary],
     [$.app_expr, $._expr],
     [$.if_stmt, $.if_expr],
     [$.type_app_expr, $.app_expr],
@@ -45,7 +45,8 @@ module.exports = grammar({
     [$._pi_parameter_set, $.ann_expr],
     [$._pi_parameter_set, $.pi_expr],
     [$._pi_parameter_set, $.sigma_expr],
-    [$._pi_parameter_set, $.forall_expr]
+    [$._pi_parameter_set, $.forall_expr],
+    [$.path, $.primary],
   ],
 
   rules: {
@@ -63,7 +64,7 @@ module.exports = grammar({
 
     identifier: $ => choice($.simple_identifier, $.symbol_identifier),
 
-    path: $ => prec.left(seq(
+    path: $ => prec.right(seq(
       field('segment', $.identifier),
       repeat(seq('.', field('segment', $.identifier))),
     )),
@@ -461,7 +462,7 @@ module.exports = grammar({
     // Primaries
     primary: $ => choice(
       $.literal,
-      $.identifier,
+      $.path,
       $.tuple_expr,
       $.array_expr,
       $.if_expr,
