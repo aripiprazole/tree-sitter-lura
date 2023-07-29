@@ -266,13 +266,19 @@ module.exports = grammar({
     ),
 
     // Patterns
-    _pattern: $ => choice($.cons_pattern, $.rest_pattern, $.literal),
+    _pattern: $ => choice($.group_pattern, $.cons_pattern, $.rest_pattern, $.literal),
 
     rest_pattern: $ => '..',
 
     cons_pattern: $ => prec.left(seq(
       field('name', $.path),
       repeat(field('pattern', $._pattern)),
+    )),
+
+    group_pattern: $ => prec.left(seq(
+      '(',
+      field('pattern', $._pattern),
+      ')',
     )),
 
     // Expressions
@@ -350,18 +356,15 @@ module.exports = grammar({
     )),
 
     parameter: $ => prec.left(seq(
-      field('pattern', $._pattern),
-      optional(seq(
-        ':',
-        field('parameter_type', $._type_expr),
-      )),
+      optional(seq(field('pattern', $._pattern), ':')),
+      field('parameter_type', $._type_expr),
     )),
 
-    _parameter_set: $ => seq(
+    _parameter_set: $ => prec.left(seq(
       field('parameter', $._any_parameter),
       repeat(seq(',', field('parameter', $._any_parameter))),
       optional(','),
-    ),
+    )),
 
     forall_parameter: $ => prec.left(seq(
       '^',
