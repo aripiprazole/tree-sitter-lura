@@ -2064,7 +2064,7 @@
                   },
                   {
                     "type": "STRING",
-                    "value": "::"
+                    "value": ":"
                   }
                 ]
               },
@@ -3209,10 +3209,6 @@
       "_expr",
       "type_app_expr",
       "app_expr"
-    ],
-    [
-      "group_pattern",
-      "_any_parameter"
     ],
     [
       "_type_expr",
