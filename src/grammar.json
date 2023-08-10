@@ -2064,7 +2064,7 @@
                   },
                   {
                     "type": "STRING",
-                    "value": ":"
+                    "value": "::"
                   }
                 ]
               },
@@ -2157,6 +2157,10 @@
     "_any_parameter": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_pattern"
+        },
         {
           "type": "SYMBOL",
           "name": "forall_parameter"
@@ -3147,6 +3151,10 @@
       "_expr",
       "type_app_expr",
       "app_expr"
+    ],
+    [
+      "group_pattern",
+      "_any_parameter"
     ],
     [
       "_type_expr",

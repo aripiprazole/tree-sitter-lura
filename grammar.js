@@ -12,6 +12,7 @@ module.exports = grammar({
     [$.if_stmt, $.if_expr],
     [$.type_app_expr, $.app_expr],
     [$._expr, $.type_app_expr, $.app_expr],
+    [$.group_pattern, $._any_parameter],
 
     [$._type_expr, $.primary],
     [$._pattern, $.primary],
@@ -369,7 +370,7 @@ module.exports = grammar({
     )),
 
     parameter: $ => prec.left(seq(
-      optional(seq(field('pattern', $._pattern), ':')),
+      optional(seq(field('pattern', $._pattern), '::')),
       field('parameter_type', $._type_expr),
     )),
 
@@ -385,6 +386,7 @@ module.exports = grammar({
     )),
 
     _any_parameter: $ => choice(
+      $._pattern,
       $.forall_parameter,
       $.parameter,
     ),
