@@ -380,13 +380,23 @@ module.exports = grammar({
       optional(','),
     )),
 
+    _type_parameter_set: $ => prec.left(seq(
+      field('parameter', $._type_parameter),
+      repeat(seq(',', field('parameter', $._type_parameter))),
+      optional(','),
+    )),
+
     forall_parameter: $ => prec.left(seq(
       '^',
       field('identifier', $.identifier),
     )),
 
-    _any_parameter: $ => choice(
+    _type_parameter: $ => choice(
       $._pattern,
+      $.parameter,
+    ),
+
+    _any_parameter: $ => choice(
       $.forall_parameter,
       $.parameter,
     ),
@@ -417,7 +427,7 @@ module.exports = grammar({
 
     sigma_expr: $ => prec.left(seq(
       '[',
-      field('parameter', $._parameter_set),
+      field('parameter', $._type_parameter_set),
       ']',
       '=>',
       field('value', $._type_expr),
