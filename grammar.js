@@ -77,6 +77,7 @@ module.exports = grammar({
       $.trait_decl,
       $.data_decl,
       $.type_decl,
+      $.instance_decl,
       $.signature,
       $.clause,
     ),
@@ -136,6 +137,18 @@ module.exports = grammar({
       repeat(field('pattern', $._pattern)),
       '=',
       optional(field('value', $._expr)),
+    ),
+
+    instance_decl: $ => seq(
+      repeat(field('doc_string', $.doc_string)),
+      repeat(field('attribute', $.attribute)),
+      optional(field('visibility', $.visibility)),
+      'instance',
+      field('name', $.path),
+      repeat(field('argument', $._argument_list)),
+      'of',
+      field('', $._type_expr),
+      optional(field('trait_body', $._class_body)),
     ),
 
     type_decl: $ => seq(

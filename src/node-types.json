@@ -1520,6 +1520,136 @@
     "fields": {}
   },
   {
+    "type": "instance_decl",
+    "named": true,
+    "fields": {
+      "": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ann_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "forall_expr",
+            "named": true
+          },
+          {
+            "type": "lam_expr",
+            "named": true
+          },
+          {
+            "type": "match_expr",
+            "named": true
+          },
+          {
+            "type": "pi_expr",
+            "named": true
+          },
+          {
+            "type": "primary",
+            "named": true
+          },
+          {
+            "type": "sigma_expr",
+            "named": true
+          },
+          {
+            "type": "type_app_expr",
+            "named": true
+          }
+        ]
+      },
+      "argument": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "explicit_arguments",
+            "named": true
+          },
+          {
+            "type": "implicit_arguments",
+            "named": true
+          }
+        ]
+      },
+      "attribute": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "doc_string",
+            "named": true
+          }
+        ]
+      },
+      "field": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "signature",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "path",
+            "named": true
+          }
+        ]
+      },
+      "trait_body": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "signature",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "lam_expr",
     "named": true,
     "fields": {
@@ -2495,6 +2625,10 @@
             "named": true
           },
           {
+            "type": "instance_decl",
+            "named": true
+          },
+          {
             "type": "signature",
             "named": true
           },
@@ -3203,6 +3337,10 @@
     "named": false
   },
   {
+    "type": "instance",
+    "named": false
+  },
+  {
     "type": "internal",
     "named": false
   },
@@ -3220,6 +3358,10 @@
   },
   {
     "type": "n",
+    "named": false
+  },
+  {
+    "type": "of",
     "named": false
   },
   {
