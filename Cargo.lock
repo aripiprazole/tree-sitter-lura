@@ -64,7 +64,7 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter-lura"
-version = "0.1.17"
+version = "0.1.18"
 dependencies = [
  "cc",
  "tree-sitter",

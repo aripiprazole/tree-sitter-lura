@@ -147,7 +147,9 @@ module.exports = grammar({
       field('name', $.path),
       repeat(field('argument', $._argument_list)),
       'of',
-      field('', $._type_expr),
+      field('item', $._type_expr),
+      repeat(seq(',', field('item', $._type_expr))),
+      optional(','),
       optional(field('trait_body', $._class_body)),
     ),
 
