@@ -694,7 +694,7 @@
           "name": "item",
           "content": {
             "type": "SYMBOL",
-            "name": "_type_expr"
+            "name": "primary"
           }
         },
         {
@@ -711,7 +711,7 @@
                 "name": "item",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "_type_expr"
+                  "name": "primary"
                 }
               }
             ]
