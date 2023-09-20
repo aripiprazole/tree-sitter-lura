@@ -1137,6 +1137,21 @@
     }
   },
   {
+    "type": "free_variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "function_constructor",
     "named": true,
     "fields": {
@@ -2258,6 +2273,10 @@
           "named": true
         },
         {
+          "type": "free_variable",
+          "named": true
+        },
+        {
           "type": "if_expr",
           "named": true
         },
@@ -3278,6 +3297,10 @@
   },
   {
     "type": "f64",
+    "named": false
+  },
+  {
+    "type": "forall",
     "named": false
   },
   {

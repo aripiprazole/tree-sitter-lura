@@ -1893,6 +1893,10 @@
         "type": "SEQ",
         "members": [
           {
+            "type": "STRING",
+            "value": "forall"
+          },
+          {
             "type": "REPEAT1",
             "content": {
               "type": "FIELD",
@@ -2683,6 +2687,19 @@
         }
       ]
     },
+    "free_variable": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "^"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        }
+      ]
+    },
     "primary": {
       "type": "CHOICE",
       "members": [
@@ -2693,6 +2710,10 @@
         {
           "type": "SYMBOL",
           "name": "path"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "free_variable"
         },
         {
           "type": "SYMBOL",
@@ -3176,10 +3197,6 @@
         },
         {
           "type": "STRING",
-          "value": "^"
-        },
-        {
-          "type": "STRING",
           "value": "&"
         },
         {
@@ -3347,6 +3364,10 @@
     [
       "_pattern",
       "primary"
+    ],
+    [
+      "forall_parameter",
+      "free_variable"
     ]
   ],
   "precedences": [

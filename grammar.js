@@ -12,9 +12,9 @@ module.exports = grammar({
     [$.if_stmt, $.if_expr],
     [$.type_app_expr, $.app_expr],
     [$._expr, $.type_app_expr, $.app_expr],
-
     [$._type_expr, $.primary],
     [$._pattern, $.primary],
+    [$.forall_parameter, $.free_variable],
   ],
 
   precedences: $ => [
@@ -335,6 +335,7 @@ module.exports = grammar({
     ),
 
     forall_expr: $ => prec.left(seq(
+      'forall',
       repeat1(field('parameter', $.forall_parameter)),
       '.',
       field('value', $._type_expr),
@@ -485,10 +486,13 @@ module.exports = grammar({
 
     _arm_body: $ => choice($.block, $._expr),
 
+    free_variable: $ => seq('^', $.identifier),
+
     // Primaries
     primary: $ => choice(
       $.literal,
       $.path,
+      $.free_variable,
       $.tuple_expr,
       $.array_expr,
       $.if_expr,
@@ -538,7 +542,7 @@ module.exports = grammar({
     // LEXER
     _line_break: $ => /(\n|\r\n|;)+/,
 
-    _symbol: $ => choice('$', '?', '.', '+', '-', '*', '/', '%', '^', '&', '|', '&&', '||', '!', '~', '=', '<', '>'),
+    _symbol: $ => choice('$', '?', '.', '+', '-', '*', '/', '%', '&', '|', '&&', '||', '!', '~', '=', '<', '>'),
 
     _octal: $ => /[0-7]+/i,
     _hex: $ => /[0-8a-fA-F]+/i,
